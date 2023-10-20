@@ -127,7 +127,7 @@ const Demo = () => {
             <img
               src={gideonLoader}
               alt="loader"
-              className="w-25 h-20 object-contain"
+              className="w-30 h-auto object-contain"
             />
           </div>
         ) : error ? (

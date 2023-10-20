@@ -82,9 +82,9 @@
 }
 .dot-flashing::before {
   left: -15px;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 6px;
   background-color: #9880ff;
   color: #9880ff;
   animation: dot-flashing 1s infinite alternate;
@@ -92,9 +92,9 @@
 }
 .dot-flashing::after {
   left: 15px;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 6px;
   background-color: #9880ff;
   color: #9880ff;
   animation: dot-flashing 1s infinite alternate;
