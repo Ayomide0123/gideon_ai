@@ -8,7 +8,7 @@ const hankoApi = import.meta.env.VITE_HANKO_API_URL;
 const Login = () => {
   const navigate = useNavigate();
   const redirectToApp = () => {
-    navigate("/");
+    navigate("/app");
   };
 
   useEffect(() => {
