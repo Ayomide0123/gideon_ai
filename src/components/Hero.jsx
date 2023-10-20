@@ -13,15 +13,21 @@ const Hero = () => {
           </h1>
         </div>
 
-        <div>
-          <ProfileBtn />
-          <LogoutBtn />
+        <div className="flex flex-col">
+          <button className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+            <ProfileBtn />
+          </button>
+          <button className="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+            <LogoutBtn />
+          </button>
         </div>
       </nav>
 
       <h1 className="head_text">
-        Summarize Articles with <br className="max-md:hidden" />
-        <span className="orange_gradient ">Gideon</span>
+        Summarize Articles with&nbsp; <br className="md:hidden" />
+        <span className="bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+          Gideon
+        </span>
       </h1>
       <h2 className="desc">
         Simplify your reading with Gideon, an AI article summarizer that

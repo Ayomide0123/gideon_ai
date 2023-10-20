@@ -95,9 +95,6 @@ const Demo = () => {
           className="flex flex-col gap-1 max-h-60 overflow-y-auto
         scrollbar-thumb-slate-400 scrollbar-thin scrollbar-track-gray-transparent scrollbar-thumb-rounded-md"
         >
-          <h2 className="font-satoshi font-bold text-gray-600 text-xl">
-            <span className="blue_gradient">History</span>
-          </h2>
           {allArticles.reverse().map((item, index) => (
             <div
               key={`link-${index}`}
@@ -165,13 +162,13 @@ const Demo = () => {
           )
         )}
       </div>
-      <div className="flex">
+      <div className="flex justify-center">
         <button
           type="button"
           onClick={() =>
             window.open("https://github.com/TidbitsJS/Summize", "_blank")
           }
-          className="black_btn m-auto mb-5"
+          className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
         >
           GitHub
         </button>
