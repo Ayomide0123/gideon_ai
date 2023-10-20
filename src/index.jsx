@@ -9,8 +9,8 @@ const EntryPoint = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/app" element={<App />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<App />} />
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -11,7 +11,7 @@ function LogoutBtn() {
 
   const logout = () => {
     hanko.user.logout().then(() => {
-      navigate("/");
+      navigate("/login");
     });
   };
 
