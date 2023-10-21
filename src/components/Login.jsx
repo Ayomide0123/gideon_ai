@@ -2,7 +2,7 @@ import { register, Hanko } from "@teamhanko/hanko-elements";
 import { useCallback, useEffect, useMemo } from "react";
 import "../global.css";
 import { useNavigate } from "react-router-dom";
-import gideonWelcome from "../assets/gideon_welcome.png";
+import gideonWelcome from "../assets/gideon_Welcome.png";
 
 const hankoApi = import.meta.env.VITE_HANKO_API_URL;
 
