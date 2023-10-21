@@ -1,5 +1,5 @@
-import { register } from "@teamhanko/hanko-elements";
-import { useEffect } from "react";
+import { register, Hanko } from "@teamhanko/hanko-elements";
+import { useCallback, useEffect, useMemo } from "react";
 import "../global.css";
 import { useNavigate } from "react-router-dom";
 import gideonWelcome from "../assets/gideon_welcome.png";
@@ -7,19 +7,40 @@ import gideonWelcome from "../assets/gideon_welcome.png";
 const hankoApi = import.meta.env.VITE_HANKO_API_URL;
 
 const Login = () => {
+  // const navigate = useNavigate();
+  // const redirectToApp = useCallback() => {
+  //   navigate("/app");
+  // };
+
+  // useEffect(() => {
+  //   register(hankoApi ?? "").catch((error) => {
+  //     console.log(error);
+  //   });
+  //   document.addEventListener("hankoAuthSuccess", redirectToApp);
+  //   return () => {
+  //     document.removeEventListener("hankoAuthSuccess", redirectToApp);
+  //   };
+  // }, [redirectToApp]);
+
   const navigate = useNavigate();
-  const redirectToApp = () => {
+  const hanko = useMemo(() => new Hanko(hankoApi), []);
+
+  const redirectAfterLogin = useCallback(() => {
     navigate("/app");
-  };
+  }, [navigate]);
+
+  useEffect(
+    () =>
+      hanko.onAuthFlowCompleted(() => {
+        redirectAfterLogin();
+      }),
+    [hanko, redirectAfterLogin]
+  );
 
   useEffect(() => {
     register(hankoApi ?? "").catch((error) => {
       console.log(error);
     });
-    document.addEventListener("hankoAuthSuccess", redirectToApp);
-    return () => {
-      document.removeEventListener("hankoAuthSuccess", redirectToApp);
-    };
   }, []);
 
   return (
