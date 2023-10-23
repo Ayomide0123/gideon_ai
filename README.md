@@ -51,4 +51,6 @@ The application should now be running at <http://localhost:5173>
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Login Page](https://github.com/Ayomide0123/gideon_ai/blob/main/src/assets/screenshots/login_page.png)
+
+![Landing Page](https://github.com/Ayomide0123/gideon_ai/blob/main/src/assets/screenshots/landing_page.png)
