@@ -6,7 +6,7 @@ Gideon is a user-friendly AI web application that simplifies the way you consume
 
 - **Article Summarization:** Summarize long articles provided via URL to save time and offer concise information.
 - **User-Friendly Interface:** A clean and intuitive web interface for easy interaction.
-- - **Copy to Clipboard:** Copy the generated summaries to your clipboard.
+- **Copy to Clipboard:** Copy the generated summaries to your clipboard.
 
 ## Environment Variables
 
