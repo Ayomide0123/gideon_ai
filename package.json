@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/base": "^5.0.0-beta.20",
     "@reduxjs/toolkit": "^1.9.7",
     "@teamhanko/hanko-elements": "^0.9.0",
     "express": "^4.18.2",

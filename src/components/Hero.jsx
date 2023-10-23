@@ -1,10 +1,32 @@
 import Gideon from "../assets/gideon_icon.jpg";
 import LogoutBtn from "./LogoutBtn";
 import ProfileBtn from "./ProfileBtn";
+import User from "../assets/user_profile.png";
+import { useState, useRef, useEffect } from "react";
 
 const hankoApi = import.meta.env.VITE_HANKO_API_URL;
 
 const Hero = () => {
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleDropdown = () => {
+    setIsDropdownVisible(!isDropdownVisible);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropdownVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <header className="w-full flex justify-center items-center flex-col">
       <nav className="flex justify-between items-center w-full mb-10 pt-3">
@@ -14,14 +36,27 @@ const Hero = () => {
             Gideon
           </h1>
         </div>
+        <div className="md:flex flex-col sm:hidden">
+          <ProfileBtn api={hankoApi} />
+          <LogoutBtn api={hankoApi} />
+        </div>
 
-        <div className="flex flex-col">
-          <button className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
-            <ProfileBtn api={hankoApi} />
-          </button>
-          <button className="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
-            <LogoutBtn api={hankoApi} />
-          </button>
+        <div className="md:hidden" ref={dropdownRef}>
+          <img
+            src={User}
+            alt="user_profile"
+            className="w-10 cursor-pointer absolute top-10 right-16"
+            onClick={toggleDropdown}
+          />
+          {isDropdownVisible && (
+            <>
+              <div className="absolute w-4 h-4 bg-slate-200 transform rotate-45 -mt-1 top-[85px] right-20"></div>
+              <div className=" flex flex-col bg-slate-200 absolute top-[80px] right-6 mt-2 mr-2 p-5">
+                <ProfileBtn api={hankoApi} />
+                <LogoutBtn api={hankoApi} />
+              </div>
+            </>
+          )}
         </div>
       </nav>
 
@@ -39,5 +74,4 @@ const Hero = () => {
     </header>
   );
 };
-
 export default Hero;

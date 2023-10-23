@@ -141,7 +141,7 @@
 } */
 
 .head_text {
-  @apply mt-5 lg:text-6xl font-extrabold leading-[1.15] text-slate-950 sm:text-5xl text-center;
+  @apply mt-5 lg:text-6xl font-extrabold leading-[1.15] text-slate-950 sm:text-3xl text-center;
 }
 
 /* .orange_gradient {
