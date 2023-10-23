@@ -1,6 +1,6 @@
 # Gideon (AI Summarizer App)
 
-Gideon is a powerful AI web application designed to streamline your reading experience. It offers a smart solution for summarizing lengthy articles with just a few clicks. Simply provide the URL of the article you'd like to digest, and Gideon will generate a concise summary, saving you valuable time. Whether you're a student, researcher, or a curious reader. Gideon is your shortcut to grasping the essence of complex articles effortlessly.
+Gideon is a user-friendly AI web application that simplifies the way you consume articles. With Gideon, you can generate concise, easy-to-understand summaries by simply providing the URL of the article you'd like to digest, saving you valuable time. Whether you're a student, researcher, or a curious reader. Gideon is your shortcut to grasping the essence of complex articles effortlessly.
 
 ## Features
 
