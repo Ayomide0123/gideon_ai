@@ -13,7 +13,7 @@ export default function HankoProfile() {
 
   return (
     <div className="gradient flex justify-center items-center">
-      <div>
+      <div className="animated_border">
         <hanko-profile api={hankoApi} />
       </div>
     </div>

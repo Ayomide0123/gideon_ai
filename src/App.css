@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
-*/
-
+* {
+  font-family: "PT Sans", sans-serif;
+}
 .main {
   width: 100%;
   min-height: 100%;
@@ -76,57 +75,59 @@
   opacity: 0.15; */
 }
 
-.dot-flashing {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
-  animation: dot-flashing 1s infinite linear alternate;
-  animation-delay: 0.5s;
-}
-.dot-flashing::before,
-.dot-flashing::after {
-  content: "";
+.lds-ellipsis {
   display: inline-block;
+  position: relative;
+  width: 70px;
+  height: 30px;
+}
+.lds-ellipsis div {
   position: absolute;
-  top: 0;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
-.dot-flashing::before {
-  left: -15px;
-  width: 15px;
-  height: 15px;
-  border-radius: 6px;
-  background-color: black;
-  color: black;
-  animation: dot-flashing 1s infinite alternate;
-  animation-delay: 0s;
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
 }
-.dot-flashing::after {
-  left: 15px;
-  width: 15px;
-  height: 15px;
-  border-radius: 6px;
-  background-color: #9880ff;
-  color: #9880ff;
-  animation: dot-flashing 1s infinite alternate;
-  animation-delay: 1s;
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
 }
-
-@keyframes dot-flashing {
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
   0% {
-    background-color: #9880ff;
+    transform: scale(0);
   }
-  50%,
   100% {
-    background-color: rgba(152, 128, 255, 0.2);
+    transform: scale(1);
   }
 }
-
-@media screen and (max-width: 640px) {
-  .main {
-    padding: 0;
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
   }
 }
 
@@ -136,9 +137,50 @@
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
 }
 
-/* .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
-} */
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.animated_border {
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2rem;
+}
+.animated_border::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #9cb1c9;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#0c2470, #406a9b);
+  -webkit-animation: rotate 4s linear infinite;
+  animation: rotate 4s linear infinite;
+}
+.animated_border::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: white;
+  border-radius: 5px;
+}
 
 .head_text {
   @apply mt-5 lg:text-6xl font-extrabold leading-[1.15] text-slate-950 sm:text-3xl text-center;
@@ -157,7 +199,7 @@
 }
 
 .url_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-10 pr-12 text-sm shadow-lg font-satoshi font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-10 pr-12 text-sm shadow-lg font-PT_Sans font-medium focus:border-black focus:outline-none focus:ring-0;
 }
 
 .submit_btn {

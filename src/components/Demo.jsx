@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { copy, linkIcon, tick } from "../assets";
 import { useLazyGetSummaryQuery } from "../services/article";
 import gideonLoader from "../assets/gideon_loading.png";
+import sadGideon from "../assets/sad_gideon.png";
 
 const Demo = () => {
   const [article, setArticle] = useState({
@@ -108,7 +109,7 @@ const Demo = () => {
                   className="w-[40%] h-[40%] object-contain"
                 />
               </div>
-              <p className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate">
+              <p className="flex-1 font-PT_Sans text-blue-700 font-medium text-sm truncate">
                 {item.url}
               </p>
             </div>
@@ -120,26 +121,38 @@ const Demo = () => {
       <div className="my-10 max-w-full flex justify-center items-center">
         {isFetching ? (
           <div>
-            <div className="dot-flashing m-auto mb-2"></div>
+            <div className="lds-ellipsis">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
             <img
               src={gideonLoader}
               alt="loader"
-              className="w-30 h-auto object-contain"
+              className="w-20 h-auto object-contain"
             />
           </div>
         ) : error ? (
-          <p className="font-inter font-bold text-black text-center">
-            Well, that was not supposed to happen...
-            <br />
-            <span className="font-satoshi font-normal text-gray-700">
-              {error?.data?.error}
-            </span>
-          </p>
+          <div className="flex flex-col justify-center items-center">
+            <img
+              src={sadGideon}
+              alt="sad_gideon"
+              className="w-28 h-auto object-contain"
+            />
+            <p className="font-PT_Sans font-bold text-black text-center">
+              Well, that was not supposed to happen...
+              <br />
+              <span className="font-PT_Sans font-normal text-gray-700">
+                {error?.data?.error}
+              </span>
+            </p>
+          </div>
         ) : (
           article.summary && (
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-1">
-                <h2 className="font-satoshi font-bold text-gray-600 text-xl">
+                <h2 className="font-PT_Sans font-bold text-gray-600 text-xl">
                   Article <span className="blue_gradient">Summary</span>
                 </h2>
                 <div
@@ -154,7 +167,7 @@ const Demo = () => {
                 </div>
               </div>
               <div className="summary_box">
-                <p className="font-inter font-medium text-sm text-gray-700 text-justify p-3">
+                <p className="font-PT_Sans font-medium text-sm text-gray-700 text-justify p-3">
                   {article.summary}
                 </p>
               </div>

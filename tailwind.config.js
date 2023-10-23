@@ -23,7 +23,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        satoshi: ["Satoshi", "sans-serif"],
+        PT_Sans: ["PT Sans", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },
     },
