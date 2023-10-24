@@ -55,3 +55,29 @@ hanko-auth::part(secondary-button) {
 hanko-auth::part(divider) {
   margin: 24px 0;
 }
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  hanko-auth {
+    --container-max-width: 500px;
+    --container-padding: 20px;
+  }
+
+  hanko-profile {
+    --container-max-width: 450px;
+    --container-padding: 20px;
+  }
+}
+
+@media (max-width: 300px) {
+  hanko-auth {
+    --container-max-width: 350px;
+    --container-padding: 10px;
+  }
+
+  hanko-profile {
+    --container-max-width: 300px;
+    --container-padding: 10px;
+  }
+}
