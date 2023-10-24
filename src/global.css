@@ -33,9 +33,11 @@ hanko-auth::part(headline1),
 hanko-profile::part(headline1),
 hanko-auth::part(headline2),
 hanko-profile::part(headline2) {
-  color: #1f2328;
+  color: black;
   line-height: 36px;
-  font-family: Cal Sans;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 500;
+  text-align: center;
 }
 
 hanko-auth::part(form-item) {
@@ -53,7 +55,7 @@ hanko-auth::part(secondary-button) {
 }
 
 hanko-auth::part(divider) {
-  margin: 24px 0;
+  margin: 11px 0;
 }
 
 /* Media Queries */
@@ -70,14 +72,19 @@ hanko-auth::part(divider) {
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 480px) {
   hanko-auth {
     --container-max-width: 350px;
-    --container-padding: 10px;
+    --container-padding: 20px;
   }
 
   hanko-profile {
     --container-max-width: 300px;
-    --container-padding: 10px;
+    --container-padding: 0px;
+    --font-size: 0.8rem;
+  }
+  hanko-profile::part(headline1),
+  hanko-profile::part(headline2) {
+    font-size: 1.5rem;
   }
 }
