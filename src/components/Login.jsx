@@ -86,18 +86,22 @@ const Login = () => {
       </div>
       <div className="md:hidden sm:flex flex-col min-h-screen items-center gradient">
         <div className="flex flex-col items-center">
-          <img src={gideonWelcome} alt="gideonWelcome" className="max-w-xs" />
-          <h1 className="mb-2 text-3xl font-bold leading-[1.15] text-white text-center">
+          <img
+            src={gideonWelcome}
+            alt="gideonWelcome"
+            className="md:max-w-xs sm:max-w-[150px]"
+          />
+          <h1 className="mb-2 font-bold leading-[1.15] text-white text-center md:text-3xl sm:text-2xl">
             Hi, I&apos;m
             <span className="blue_gradient"> Gideon!</span>
           </h1>
-          <p className="mt-3 mb-3 text-xl font-bold leading-[1.15] text-white text-center px-6">
+          <p className="mt-3 mb-3 font-bold leading-[1.15] text-white text-center px-6 md:text-xl sm:text-[1rem]">
             If you&apos;ve got a lengthy article that needs simplifying,
             <br />
             I&apos;m here to help you out!
           </p>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 sm:p-4 md:p-0">
           <hanko-auth api={hankoApi} />
         </div>
       </div>
